@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FormLogin from "./components/formLogin/FormLogin";
+import Header from "./components/header/Header";
+import { useState } from "react";
 
 function App() {
+  const [isShowForm, setIsShowForm] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isShowForm ? (
+        <FormLogin />
+      ) : (
+        <>
+          <Header />
+          <h1>Привіт</h1>
+        </>
+      )}
     </div>
   );
 }

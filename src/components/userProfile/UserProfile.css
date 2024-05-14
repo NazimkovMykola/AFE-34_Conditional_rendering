@@ -1,0 +1,35 @@
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+.user-profile__avatar {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.user-profile__textWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.user-profile__mail {
+    margin-left: 10px;
+}
+.user-profile__nickname {
+    font-size: 18px;
+}
+.user-profile__logout {
+    margin-left: 20px;
+}
+.user-profile__logoutWrapper {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1px 2px;
+    transition: all .6s;
+}
+.user-profile__logoutWrapper:hover {
+    cursor: pointer;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .2);
+}

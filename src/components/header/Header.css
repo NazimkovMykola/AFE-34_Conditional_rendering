@@ -1,0 +1,25 @@
+header {
+    background-color: aquamarine;
+    padding: 1rem 2rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo {
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: tomato;
+    padding: 1rem 2rem;
+    color: wheat;
+    font-weight: bold;
+ }
+ .header_button-login {
+    border-radius: 6px;
+    padding: 6px 10px;
+    background-color: tomato;
+    transition: all .6s;
+ }
+ .header_button-login:hover {
+    cursor: pointer;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .2);
+ }
