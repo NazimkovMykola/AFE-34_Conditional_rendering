@@ -26,40 +26,41 @@ const FormLogin = () => {
 
   return (
     <div
-      id="modalBackground"
-      onClick={onOutsideClick}
-      className="modalBackground"
-    >
-      <form onSubmit={onSubmit}>
-        <h2>Для роботи з застосунком необхідно залогінитись</h2>
-        <label>
-          Логін
-          <input
-            type="text"
-            name="login"
-            id="login"
-            placeholder="Введіть логін"
-          />
-        </label>
-        <label>
-          Пароль
-          <input
-            type="text"
-            name="pass"
-            id="pass"
-            placeholder="Введіть пароль"
-          />
-        </label>
-        <button onClick={loginRequest} className="btn btn-primary" type="button">
-          <span role="status">Увійти</span>
-          <span
-            ref={spinner}
-            className="spinner-border spinner-border-sm"
-          ></span>
-        </button>
-      </form>
-    </div>
-  );
+    id="modalBackground"
+    onClick={onOutsideClick}
+    className="modalBackground"
+  >
+    <form onSubmit={onSubmit}>
+      <h2>Для роботи з застосунком необхідно залогінитись</h2>
+      <label>
+        Логін
+        <input
+          type="text"
+          name="login"
+          id="login"
+          placeholder="Введіть логін"
+        />
+      </label>
+      <label>
+        Пароль
+        <input
+          type="text"
+          name="pass"
+          id="pass"
+          placeholder="Введіть пароль"
+        />
+      </label>
+      <button onClick={loginRequest} className="btn btn-primary" type="button">
+        <span role="status">Увійти</span>
+        <span
+          ref={spinner}
+          className="spinner-border spinner-border-sm"
+        ></span>
+      </button>
+    </form>
+  </div>
+  )
+
 };
 
 export default FormLogin;
