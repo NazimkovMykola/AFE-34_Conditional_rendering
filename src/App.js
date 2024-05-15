@@ -10,10 +10,13 @@ function App() {
       {isShowForm ? (
         <FormLogin />
       ) : (
-        <>
+        <div className="mainScreen">
           <Header />
-          <h1>Привіт</h1>
-        </>
+          <main className="mainScreen__content">
+          <h1 onClick={()=> setIsShowForm(true)}>Привіт, undefinded</h1>
+          <p>Прихований контент якій має бачити лише залогінений користувач</p>
+          </main>
+        </div>
       )}
     </div>
   );
