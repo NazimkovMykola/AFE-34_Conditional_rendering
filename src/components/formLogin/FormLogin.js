@@ -1,26 +1,33 @@
 import { useRef } from "react";
 import "./FormLogin.css";
+import isLoginState from "../../mobX/isLoginState";
+import UserState from "../../mobX/userState";
 
-const FormLogin = () => {
+const FormLogin = (props) => {
+  const { openForm } = props
   const spinner = useRef(null);
+
   const onSubmit = (e) => {
     e.preventDefault();
   };
 
   const onOutsideClick = (e) => {
     if (e.target.id === "modalBackground") {
-      console.log("outside click");
+      openForm(false)
     }
   };
   const loginRequest = (e) => {
     spinner.current.style.opacity = 1;
     e.target.disabled = true;
-    fetch("https://jsonplaceholder.typicode.com/users/1")
+    fetch("https://jsonplaceholder.typicode.com/users/10")
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
         spinner.current.style.opacity = 0;
         e.target.disabled = false;
+        UserState.setUserData(json)
+        isLoginState.setIsLogin()
+        openForm(false)
       });
   };
 

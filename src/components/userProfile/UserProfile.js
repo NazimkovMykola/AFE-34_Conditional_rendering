@@ -1,9 +1,14 @@
 import "./UserProfile.css";
+import isLoginState from "../../mobX/isLoginState";
+import UserState from "../../mobX/userState";
+
 const UserProfile = () => {
   return (
     <div className="user-profile">
       <div className="user-profile__textWrapper">
-        <span className="user-profile__nickname">Nickname</span>
+        <span className="user-profile__nickname">
+          {UserState.userData.username}
+        </span>
         <div>
           <svg
             width="24"
@@ -25,12 +30,15 @@ const UserProfile = () => {
               fill="#414141"
             />
           </svg>
-          <span className="user-profile__mail">test@test.com</span>
+          <span className="user-profile__mail">{UserState.userData.email}</span>
         </div>
-        <a href="/" target="_blank">
+        <a href={UserState.userData.website} target="_blank" rel="noreferrer">
           Website
         </a>
-        <div className="user-profile__logoutWrapper">
+        <div
+          onClick={() => isLoginState.setIsLogin()}
+          className="user-profile__logoutWrapper"
+        >
           <svg
             width="24"
             height="24"
@@ -66,7 +74,7 @@ const UserProfile = () => {
         alt="avatar"
       />
     </div>
-  );
-};
+  )
+}
 
 export default UserProfile;
